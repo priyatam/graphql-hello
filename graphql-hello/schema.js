@@ -1,8 +1,9 @@
 const { gql } = require('apollo-server-lambda')
 
 const typeDefs = gql`
-  # weather schema
+  # iTunes search schema
   type ITunesSearchResult {
+    id: String!
     kind: String
     trackId: String
     trackName: String

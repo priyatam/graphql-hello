@@ -14,7 +14,7 @@ class ITunesSearchAPI extends RESTDataSource {
     //use template literals so you can change the search term with each query - 
     //our client side application will provide the search term
     const response = await this.get(`?term=${term}`)
-    console.log("Hi 1 " + response)
+    console.log("Raw repsonse: " + response)
     return this.iTunesSearchResultReducer(JSON.parse(response), term)
   }
   
@@ -22,16 +22,17 @@ class ITunesSearchAPI extends RESTDataSource {
   //mapped to our GraphQL schema
   iTunesSearchResultReducer(response, term) {
     var formattedResults = []
-    console.log("Hi 2 response: " + response.resultCount)
+    console.log("Result count: " + response.resultCount)
     response.results.forEach(function (res, index) {
       formattedResults.push({
-        id: "123-hello",
-        kind: res.kind
-        trackName: res.trackName
+        id: "123",
+        kind: res.kind,
+        trackId: res.trackId,
+        trackName: res.trackName,
+        artistId: res.artist,
         artistName: res.artistName
       })
     });
-    console.log(formattedResults)
     return formattedResults
   }
 }
