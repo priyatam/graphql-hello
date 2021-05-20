@@ -2,5 +2,3 @@
 ../.c9/
 .serverless/
 node_modules/
-package-lock.json
-package.json

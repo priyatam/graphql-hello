@@ -1,0 +1,16 @@
+{
+  "name": "graphql-hello",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apollo-datasource-rest": "^0.13.0",
+    "apollo-server-lambda": "^2.24.1",
+    "graphql": "^15.5.0"
+  },
+  "scripts": {
+    "start": "npm install"
+  },
+  "devDependencies": {
+    "serverless": "^2.42.0"
+  }
+}
