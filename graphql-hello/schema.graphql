@@ -1,8 +1,5 @@
-const { gql } = require('apollo-server-lambda')
-
-const typeDefs = gql`
-  # iTunes search schema
-  type ITunesSearchResult {
+# iTunes search schema
+type ITunesSearchResult {
     id: String!
     kind: String
     trackId: String
@@ -12,9 +9,6 @@ const typeDefs = gql`
   }
   
   # queries
-  type Query {
+type Query {
     iTunesSearch(term: String!): [ITunesSearchResult]
-  }
-`
-
-module.exports = typeDefs
+}

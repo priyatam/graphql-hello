@@ -1,15 +1,12 @@
-// graphql.js
-
 const { ApolloServer, gql } = require('apollo-server-lambda');
-
-const typeDefs = require('./schema');
-const resolvers = require('./resolvers')
-
 const ITunesSearchAPI = require('./datasource')
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  typeDefs: './schema.graphql',
+  resolvers: {
+    ITunesSearchResult,
+    Query
+  },
   dataSources: () => ({
     iTunesSearchAPI: new ITunesSearchAPI()
   }),
